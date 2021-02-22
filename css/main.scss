@@ -1,0 +1,104 @@
+@import "./variables";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  perspective: 1000px;
+
+  @include flexCenter;
+}
+
+.container {
+  // background-color: lightblue;
+  width: 50%;
+  @include flexCenter;
+}
+
+.card {
+  min-height: 80vh;
+  width: 35rem;
+  transform-style: preserve-3d;
+  border-radius: 3rem;
+  padding: 0rem 5rem;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+}
+
+.sneaker {
+  min-height: 35vh;
+  @include flexCenter;
+  position: relative;
+  img {
+    transition: all 0.75s ease-out;
+    position: absolute;
+    left: -12%;
+    width: 20rem;
+    z-index: 2;
+  }
+}
+
+.circle {
+  width: 15rem;
+  height: 15rem;
+  background: linear-gradient(to right, $circleColor1, $circleColor2);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.info {
+  h1 {
+    font-size: 3rem;
+    transition: all 0.75s ease-out;
+  }
+  h3 {
+    font-size: 1.3rem;
+    padding: 2rem 0rem;
+    color: $activeBTNColor;
+    font-weight: lighter;
+    transition: all 0.75s ease-out;
+  }
+}
+
+.sizes {
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.75s ease-out;
+  button {
+    padding: 0.5rem 2rem;
+    background: none;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: $BR;
+    cursor: pointer;
+    font-weight: bold;
+    color: $activeBTNColor;
+    &:hover {
+      background: $buttonHover;
+      color: white;
+    }
+  }
+}
+button.active {
+  background: $activeBTNColor;
+  color: white;
+}
+
+.purchase {
+  margin-top: 5rem;
+  button {
+    transition: all 0.75s ease-out;
+    width: 100%;
+    padding: 1rem 0rem;
+    background: $purchaseBTNColor;
+    border-radius: $BR;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      background: $purchaseBTNHover;
+    }
+  }
+}
