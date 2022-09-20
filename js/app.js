@@ -11,9 +11,12 @@ const sizes = document.querySelector(".sizes");
 
 // Moving Animation Event
 container.addEventListener("mousemove", (e) => {
-  let xAxis = -(window.innerWidth / 2 - e.pageX) / 25;
-  let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+  let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+  let yAxis = -(window.innerHeight / 2 - e.pageY) / 25;
   card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+  card.style["box-shadow"] = `0 ${
+    yAxis * 2
+  }px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2)`;
 });
 
 //Animate In
@@ -31,6 +34,8 @@ container.addEventListener("mouseenter", (e) => {
 container.addEventListener("mouseleave", (e) => {
   card.style.transition = "all 0.5s ease";
   card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  card.style["box-shadow"] =
+    "0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2)";
   //popback
   title.style.transform = "translateZ(0px)";
   sneaker.style.transform = "translateZ(0px)";
